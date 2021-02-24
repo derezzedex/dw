@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-app-bar color="accent-4" dense dark>
+        <v-toolbar-title><v-btn href="index.html">Omnicase</v-btn></v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn text href="contact.html">Contact</v-btn>
+      </v-app-bar>
+
+      <v-container style="background-color: #DEE1E9; height: 100vh" fill-height fluid>
+        <v-row align="center" justify="center">
+          <v-col>
+            <v-container fluid>
+              <v-row align="center" justify="center" no-gutters>
+                <v-col align-self="center" md="6">
+                  <p class="text-h2 font-weight-thin text-center">OmniCase</p>
+                  <v-spacer class="my-12"></v-spacer>
+                  <p class="text-subtitle-1 text-center">OmniCase is a travel-friendly docking station with all the ports you possibly need for your USB-C devices. Superior to those typical dongles with a long tail on one end, OmniCase has a magnetic storage case with strictly tailored slots for secure locking of detachable cables, adapters, SIM card, and its eject pin, decluttering your electronic accessories and preventing any unnecessary loss on the go.
+                  </p>
+                  <p class="text-center"><v-btn color="success" href="pricing.html"><v-icon left>mdi-cart</v-icon>Buy now</v-btn></p>
+                </v-col>
+                <v-col md="5"><v-img src="img/animation.webp"></v-img></v-col>
+              </v-row>
+            </v-container>
+          </v-col>
+        </v-row>
+      </v-container>
+
+      <v-container class="mt-16">
+        <p class="text-h3 font-weight-thin text-center mb-16">Solves these</p>
+        <v-carousel class="mt-16" cycle hide-delimiters height="auto" v-model="model">
+          <v-carousel-item v-for="(slide, i) in slides" :key="slide">
+            <v-img :src="'img/' + slide.path"></v-img>
+            <v-container class="secondary mt-n10" style="opacity: 75%"><p class="my-n2 text-center">{{slide.text}}</p></v-container>
+          </v-carousel-item>
+        </v-carousel>
+      </v-container>
+
+      <v-container class="my-16" fluid>
+        <v-row align="center" justify="center">
+          <v-col md="6">
+            <v-img class="mx-auto my-16" max-width="574" src="img/showcase.webp"></v-img>
+          </v-col>
+          <v-col md="6">
+            <v-img class="mx-auto my-16" max-width="574" src="img/compatibility2.webp"></v-img>
+          </v-col>
+          <v-col md="12">
+            <v-img class="mx-auto my-16" max-width="574" src="img/included.webp"></v-img>
+          </v-col>
+        </v-row>
+      </v-container>
+
+      <v-container>
+        <p class="text-h2 font-weight-thin text-center">Convinced?</p>
+        <p class="text-center"><v-btn color="success" href="pricing.html"><v-icon left>mdi-cart</v-icon>Buy now</v-btn></p>
+      </v-container>
+
+      <v-container class="mb-16 pb-16" fluid>
+        <v-row align="center" justify="center">
+          <v-col md="12">
+            <v-img class="mx-auto my-16" max-width="574" src="img/compatibility.webp"></v-img>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data: {
+        model: 0,
+        slides: [
+          {path: 'comparision.webp', text:"Wasting lots of money on multiple dongles"},
+          {path: 'comparision2.webp', text:"Hard to store SIM cards and eject pins"},
+          {path: 'comparision3.webp', text:"Carrying inumerous cables"},
+        ],
+      }
+    })
+  </script>
+</body>
+</html>

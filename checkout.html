@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+        <v-app-bar color="accent-4" dense dark>
+          <v-toolbar-title><v-btn href="index.html">Omnicase</v-btn></v-toolbar-title>
+          <v-spacer></v-spacer>
+          <p class="text-center my-2">Checkout</p>
+          <v-spacer></v-spacer>
+          <v-btn text href="contact.html">Contact</v-btn>
+        </v-app-bar>
+        <!-- <v-container class="text-center text-h3 font-weight-thin mx-auto">Checkout</v-container> -->
+
+        <v-card outlined class="mx-auto my-1" max-width="748">
+          <v-card-title><v-icon left>mdi-numeric-1-box-outline</v-icon>Personal Information</v-card-title>
+          <v-divider class="mx-4"></v-divider>
+
+          <v-form v-model="valid">
+            <v-row justify="center" class="py-0 my-0">
+              <v-col cols="12" md="5">
+                <v-text-field dense v-model="firstname" label="First name" placeholder="John" required outlined></v-text-field>
+              </v-col>
+              <v-col cols="12" md="5">
+                <v-text-field dense v-model="lastname" label="Last name" placeholder="Doe" required outlined></v-text-field>
+              </v-col>
+            </v-row>
+
+            <v-row justify="center" class="py-0 my-0">
+              <v-col cols="12" md="10" class="my-0">
+                <v-text-field dense v-model="email" label="Email" placeholder="you@example.com" required outlined></v-text-field>
+              </v-col>
+            </v-row>
+
+            <v-row justify="center" class="py-0 my-0">
+              <v-col cols="12" md="5">
+                <v-text-field dense v-model="address" label="Address" placeholder="123 Random St" required outlined></v-text-field>
+              </v-col>
+              <v-col cols="12" md="5">
+                <v-text-field dense v-model="postal" label="Postal code" placeholder="00000-000" required outlined></v-text-field>
+              </v-col>
+            </v-row>
+
+            <v-row justify="center" class="py-0 my-0">
+              <v-col cols="12" md="10">
+                <v-text-field dense v-model="phonenumber" label="Phonenumber" placeholder="(11) 1111-1111" required outlined></v-text-field>
+              </v-col>
+            </v-row>
+          </v-form>
+
+          <v-card-title><v-icon left>mdi-numeric-2-box-outline</v-icon>Payment Details</v-card-title>
+          <v-divider class="mx-4"></v-divider>
+            <v-row justify="center" class="py-0 my-0">
+              <v-col cols="12" md="10">
+                <v-text-field dense v-model="cardnumber" label="Card number" placeholder="0000-0000-0000-0000" required outlined></v-text-field>
+              </v-col>
+            </v-row>
+
+            <v-row justify="center" class="py-0 my-0">
+              <v-col cols="12" md="5">
+                <v-text-field dense v-model="code" label="Security code" placeholder="123" required outlined></v-text-field>
+              </v-col>
+              <v-col cols="12" md="5">
+                <v-text-field dense v-model="date" label="Expiration date" placeholder="MM/YY" required outlined></v-text-field>
+              </v-col>
+            </v-row>
+          </v-form>
+
+          <v-card-actions>
+            <v-btn class="mx-auto" color="success"><v-icon left>mdi-cart</v-icon>Complete purchase</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data: {
+        model: 0,
+        colors: [
+          'primary',
+          'secondary',
+          'yellow darken-2',
+          'red',
+          'orange',
+        ],
+      }
+    })
+  </script>
+</body>
+</html>

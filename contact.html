@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+        <v-app-bar color="accent-4" dense dark>
+          <v-toolbar-title><v-btn href="index.html">Omnicase</v-btn></v-toolbar-title>
+          <v-spacer></v-spacer>
+          <p class="text-center my-2">Contact</p>
+          <v-spacer></v-spacer>
+          <v-btn text href="contact.html">Contact</v-btn>
+        </v-app-bar>
+
+        <v-row class="mt-12" align="center" justify="center">
+          <v-col md="5">
+            <v-img src="img/about.png"></v-img>
+          </v-col>
+
+          <v-col md="5">
+            <v-container class="text-center text-h4 font-weight-bold mx-auto">Contact Us</v-container>
+            <v-spacer class="my-10"></v-spacer>
+            <v-card outlined class="mx-auto" max-width="474">
+              <v-card-title>Message Form</v-card-title>
+              <v-divider class="mx-4"></v-divider>
+
+              <v-form v-model="valid">
+                <v-row justify="center" class="py-0 my-0">
+                  <v-col cols="12" md="10">
+                    <v-text-field dense v-model="name" label="Full name" placeholder="John" required outlined></v-text-field>
+                  </v-col>
+                </v-row>
+
+                <v-row justify="center" class="py-0 my-0">
+                  <v-col cols="12" md="10" class="my-0">
+                    <v-text-field dense v-model="email" label="Email" placeholder="you@example.com" required outlined></v-text-field>
+                  </v-col>
+                </v-row>
+
+                <v-row justify="center" class="py-0 my-0">
+                  <v-col cols="12" md="10" class="my-0">
+                    <v-textarea outlined name="message" label="Message"></v-textarea>
+                  </v-col>
+                </v-row>
+              </v-form>
+
+              <v-card-actions>
+                <v-btn class="mx-auto" color="primary"><v-icon left>mdi-pencil</v-icon>Send</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data: {
+        model: 0,
+        colors: [
+          'primary',
+          'secondary',
+          'yellow darken-2',
+          'red',
+          'orange',
+        ],
+      }
+    })
+  </script>
+</body>
+</html>
