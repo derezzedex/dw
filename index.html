@@ -4,6 +4,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <link href="style/style.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
@@ -15,7 +16,7 @@
         <v-btn text href="contact.html">Contact</v-btn>
       </v-app-bar>
 
-      <v-container style="background-color: #DEE1E9; height: 100vh" fill-height fluid>
+      <v-container class="background-container" fill-height fluid>
         <v-row align="center" justify="center">
           <v-col>
             <v-container fluid>
@@ -39,7 +40,7 @@
         <v-carousel class="mt-16" cycle hide-delimiters height="auto" v-model="model">
           <v-carousel-item v-for="(slide, i) in slides" :key="slide">
             <v-img :src="'img/' + slide.path"></v-img>
-            <v-container class="secondary mt-n10" style="opacity: 75%"><p class="my-n2 text-center">{{slide.text}}</p></v-container>
+            <v-container class="secondary mt-n10 faded-subtitle"><p class="my-n2 text-center">{{slide.text}}</p></v-container>
           </v-carousel-item>
         </v-carousel>
       </v-container>

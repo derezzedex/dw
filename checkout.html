@@ -75,9 +75,32 @@
           </v-form>
 
           <v-card-actions>
-            <v-btn class="mx-auto" color="success"><v-icon left>mdi-cart</v-icon>Complete purchase</v-btn>
+            <v-btn class="mx-auto" color="success" @click="fakeCheckout"><v-icon left>mdi-cart</v-icon>Complete purchase</v-btn>
           </v-card-actions>
         </v-card>
+
+        <v-dialog v-model="wait_dialog" hide-overlay persistent width="300">
+          <v-card color="primary" dark>
+            <v-card-text>
+              Just a second
+              <v-progress-linear
+                indeterminate
+                color="white"
+                class="mb-0"
+              ></v-progress-linear>
+            </v-card-text>
+          </v-card>
+        </v-dialog>
+
+        <v-dialog v-model="done_dialog" hide-overlay width="300">
+          <v-card>
+            <v-card-title><p class="mx-auto text-center font-weight-bold">You're all set!</p></v-card-title>
+            <v-card-actions>
+              <v-btn class="text-center mx-auto" color="success" href="index.html">Ok</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+
       </v-main>
     </v-app>
   </div>
@@ -85,11 +108,13 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
   <script>
-    new Vue({
+    var vue = new Vue({
       el: '#app',
       vuetify: new Vuetify(),
       data: {
         model: 0,
+        wait_dialog: false,
+        done_dialog: false,
         colors: [
           'primary',
           'secondary',
@@ -97,8 +122,19 @@
           'red',
           'orange',
         ],
+      },
+
+      methods: {
+        fakeCheckout: function(){
+          this.wait_dialog = true; 
+          setTimeout(() => {            
+            this.wait_dialog = false;
+            this.done_dialog = true;       
+          }, 5000);
+        }
       }
-    })
+
+    });
   </script>
 </body>
 </html>
